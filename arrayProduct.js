@@ -40,17 +40,23 @@ const arrayProduct = (arr) => {
   return results;
 };
 
+/* ------------------------
+  Without using division
+ --------------------------*/
 const arrayProduct2 = (arr) => {
   let before = 1;
   let after = 1;
   let beforeProducts = [];
   let results = [];
+
+  // loop to get product before index
   for (let i = 0; i < arr.length; i++) {
     beforeProducts[i] = before;
     before *= arr[i];
   }
   // console.log(beforeProducts);
 
+  // loop to get product after index and multiple with before index
   for (let j = arr.length-1; j >= 0; j--) {
     results[j] = after * beforeProducts[j];
     after *= arr[j];
