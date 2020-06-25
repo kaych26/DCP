@@ -8,7 +8,6 @@ Given an array of integers, return a new array such that each element at index i
 For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 
 Follow-up: what if you can't use division?
-
 */
 
 const arrayProduct = (arr) => {
@@ -36,7 +35,6 @@ const arrayProduct = (arr) => {
       results.push(product / arr[j]);
     }
   }
-
   return results;
 };
 
@@ -63,7 +61,6 @@ const arrayProduct2 = (arr) => {
   }
   // console.log(results);
   return (results)
-  
 }
 
 // console.log(arrayProduct([1, 2, 3, 4, 5]));
