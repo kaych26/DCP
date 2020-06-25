@@ -14,7 +14,7 @@ Follow-up: what if you can't use division?
 const arrayProduct = (arr) => {
   let product = 1;
   let numZero = 0;
-  let result = [];
+  let results = [];
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === 0) {
@@ -25,20 +25,43 @@ const arrayProduct = (arr) => {
 
   for (let j = 0; j < arr.length; j++) {
     if (numZero >= 2) {
-      result.push(0);
+      results.push(0);
     } else if (numZero === 1) {
       if (arr[j] === 0) {
-        result.push(product);
+        results.push(product);
       } else {
-        result.push(0);
+        results.push(0);
       }
     } else {
-      result.push(product / arr[j]);
+      results.push(product / arr[j]);
     }
   }
 
-  return result;
+  return results;
 };
 
+const arrayProduct2 = (arr) => {
+  let before = 1;
+  let after = 1;
+  let beforeProducts = [];
+  let results = [];
+  for (let i = 0; i < arr.length; i++) {
+    beforeProducts[i] = before;
+    before *= arr[i];
+  }
+  // console.log(beforeProducts);
+
+  for (let j = arr.length-1; j >= 0; j--) {
+    results[j] = after * beforeProducts[j];
+    after *= arr[j];
+  }
+  // console.log(results);
+  return (results)
+  
+}
+
 // console.log(arrayProduct([1, 2, 3, 4, 5]));
-console.log(arrayProduct([0, 2, 3, 4, 5]));
+// console.log(arrayProduct([0, 2, 3, 4, 5]));
+// console.log(arrayProduct([2,4,10]));
+console.log(arrayProduct2([1, 2, 3, 4, 5]));
+console.log(arrayProduct2([2,4,10]));
