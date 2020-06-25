@@ -49,22 +49,20 @@ const arrayProduct2 = (arr) => {
 
   // loop to get product before index
   for (let i = 0; i < arr.length; i++) {
-    beforeProducts[i] = before;
-    before *= arr[i];
+      beforeProducts[i] = before;
+      before *= arr[i];
   }
-  // console.log(beforeProducts);
 
   // loop to get product after index and multiple with before index
-  for (let j = arr.length-1; j >= 0; j--) {
+  for (let j = arr.length - 1; j >= 0; j--) {
     results[j] = after * beforeProducts[j];
     after *= arr[j];
   }
-  // console.log(results);
   return (results)
 }
 
 // console.log(arrayProduct([1, 2, 3, 4, 5]));
 // console.log(arrayProduct([0, 2, 3, 4, 5]));
 // console.log(arrayProduct([2,4,10]));
-console.log(arrayProduct2([1, 2, 3, 4, 5]));
+// console.log(arrayProduct2([1, 2, 3, 4, 5]));
 console.log(arrayProduct2([2,4,10]));
